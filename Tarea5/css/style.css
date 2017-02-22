@@ -1,0 +1,74 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: #9296E5;
+}
+#formulario{    
+    background-color: #f9f9f9;
+    width: 25%;    
+    padding: 15px;
+    border: solid 2px #000;
+}
+#formulario #PopImg{
+    display: block;
+    margin: auto;
+    width: 50%;    
+}
+#PopImg img{
+    width: 100%;
+}
+#formulario input{
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+}
+#formulario label{
+    display: block;
+    text-align: center;
+    font-size:1.1em;
+}
+#formulario #Mibtn{    
+    display: block;    
+    width: 30%;
+    margin: auto;
+    margin-top: 10px;    
+    border: 0px;
+    background-color: coral;
+    color: #fff;    
+    padding: 10px
+}
+#MiTablaArea{
+    float: right;
+    background-color: #E8E8E8;
+    width: 60%;
+    height: 90%;
+    border: solid 2px #000;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 20px;    
+}
+#MiTablaArea table{
+    width: 100%;
+}
+#MiTablaArea table thead{
+    background-color: b0f070;    
+}
+#MiTablaArea table tbody tr{
+    background-color: #839AC2;       
+}
+#MiTablaArea table tbody td{padding-left: 5px;padding-right: 5px; text-align: center;}
+/*Aqui estan los estilos de los botones de borrar y editar*/
+.Stilo{
+    width: 40px;    
+    border: 0px;
+    background-color: rgba(0,0,0,0);}
+
+.Stilo img{
+    width: 100%;    
+}
+
+.Stilo:hover{opacity: 0.5; cursor: pointer;}
