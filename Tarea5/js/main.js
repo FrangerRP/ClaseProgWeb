@@ -71,8 +71,17 @@ function ViewUsers(){
 	miImg =document.createElement("img");
 	miImg.setAttribute('src','img/icon/DeleteIco.png');
 	btn.appendChild(miImg);
-
 	btn.setAttribute('onclick','DropUser(this)');
+	td.appendChild(btn);
+	tr.appendChild(td);
+
+	td = document.createElement("td");//Editar
+	btn = document.createElement("button");
+	btn.setAttribute('class','Stilo')
+	miImg =document.createElement("img");
+	miImg.setAttribute('src','img/icon/EditIco.png');
+	btn.appendChild(miImg);
+	btn.setAttribute('onclick','EditUser(this)');
 	td.appendChild(btn);
 	tr.appendChild(td);
 
@@ -96,6 +105,33 @@ function DropUser(btn){
 		SaveLocalS();
 	}
 	tr.setAttribute('class','borrar');
+}
+function EditUser(btn){
+	tr = btn.parentNode.parentNode;
+	indice = tr.getAttribute('indice');	
+	tarr=[];
+	for(x=0; x<Usuarios.length; x++){
+		if(x==indice){
+			document.getElementById('TxtCedula').value=Usuarios[x].cedula;
+			document.getElementById('TxtNombre').value=Usuarios[x].nombre;
+			document.getElementById('TxtApellido').value=Usuarios[x].apellido;
+			document.getElementById('TxtTelefono').value=Usuarios[x].telefono;
+			document.getElementById('imgg').src=Usuarios[x].foto;			
+		}
+	}
+	soloRemove();
+}
+function soloRemove(){	
+		indice = tr.getAttribute('indice');
+		tarr =[];
+		for(y=0; y<Usuarios.length;y++){
+			if(y!=indice){
+				tarr.push(Usuarios[y]);
+			}
+		}	
+		Usuarios = tarr;
+		tr.parentNode.removeChild(tr);
+		SaveLocalS();		
 }
 
 function LoadUser(){
